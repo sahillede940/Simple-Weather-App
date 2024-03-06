@@ -1,0 +1,49 @@
+
+/* weather-card */
+.weather-card {
+  display: flex; /* Use flexbox for layout */
+  border: 3px solid #000000;
+  border-radius: 2rem;
+  padding: 1rem;
+  width: 500px; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+}
+
+.weather-image {
+  flex: 0 0 30%; /* Allocate 30% width to the image */
+  margin-right: 20px; /* Add margin for spacing */
+}
+.weather-image img {
+  width: 100%;
+  height: auto;
+}
+
+.weather-info {
+  flex: 1; /* Remaining space allocated to the info section */
+}
+
+.location {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.temperature {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.weather-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.condition {
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.humidity {
+  font-size: 16px;
+}
