@@ -6,8 +6,9 @@ export const axiosInstance = axios.create({
 });
 
 const token = JSON.parse(localStorage.getItem("token")) || null;
+console.log(token.access);
 
-if(token){
+if(token.access){
     axiosInstance.defaults.headers["Authorization"] = `Bearer ${token.access}`;
 }
 

@@ -44,13 +44,16 @@ class WeatherAPI(views.APIView):
         response = response.json().get('bulk')
         weather_data = []
         for location in response:
-            weather_data.append({
-                'location': location.get('query').get('location').get('name') + ', ' + location.get('query').get('location').get('country'),
-                'temp_c': location.get('query').get('current').get('temp_c'),
-                'humidity': location.get('query').get('current').get('humidity'),
-                'condition': location.get('query').get('current').get('condition').get('text'),
-                'icon': location.get('query').get('current').get('condition').get('icon'),
-            })
+            location = location.get('query')
+            print(location)
+            if location.get("location"):
+                weather_data.append({
+                    'location':  location.get('location', {}).get('name') + ', ' + location.get('location', {}).get('country'),
+                    'temp_c': location.get('current').get('temp_c'),
+                    'humidity': location.get('current').get('humidity'),
+                    'condition': location.get('current').get('condition').get('text'),
+                    'icon': location.get('current').get('condition').get('icon'),
+                })
         return Response(weather_data, status=status.HTTP_200_OK)
 
 
