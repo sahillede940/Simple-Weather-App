@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
 import PrivateRoutes from "./components/PrivateRoutes";
 import SignIn from "./components/SignIn";
 import Register from "./components/Register";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (

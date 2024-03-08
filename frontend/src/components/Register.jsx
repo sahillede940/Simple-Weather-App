@@ -35,10 +35,10 @@ function RegisterForm() {
         />
       </div>
       <div className="input-field">
-        <label htmlFor="email">Location:</label>
+        <label htmlFor="location">Location:</label>
         <input
-          type="email"
-          id="email"
+          type="text"
+          id="location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           required
