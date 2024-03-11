@@ -1,19 +1,34 @@
 import React from "react";
-import "./Card.css";
+// import "./Card.css";
 
-function WeatherCard({ location, temp_c, humidity, condition, icon }) {
+function WeatherCard({
+  location,
+  temp_c,
+  humidity,
+  condition,
+  icon,
+  localtime,
+}) {
   return (
-    <div className="weather-card">
-      <div className="weather-image">
-        <img src={icon} alt={condition} className="weather-icon" />
+    <article
+      className="widget"
+      style={{
+        margin: "1rem",
+      }}
+    >
+      <img className="weatherIcon" src={icon} alt="" />
+      <div className="weatherInfo">
+        <div className="temperature">
+          <span>{temp_c}&deg;</span>
+        </div>
+        <div className="description">
+          <div className="weatherCondition">{condition}</div>
+          <div className="place">{location}</div>
+          <div className="place">{humidity}</div>
+        </div>
       </div>
-      <div className="weather-info">
-        <div className="location">{location}</div>
-        <div className="temperature">Temp: {temp_c}°C</div>
-        <div className="condition">{condition}</div>
-        <div className="humidity">Humidity: {humidity}%</div>
-      </div>
-    </div>
+      <div className="date">{localtime.substring(0, 10)}</div>
+    </article>
   );
 }
 

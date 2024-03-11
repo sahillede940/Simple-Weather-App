@@ -53,6 +53,7 @@ class WeatherAPI(views.APIView):
                     'humidity': location.get('current').get('humidity'),
                     'condition': location.get('current').get('condition').get('text'),
                     'icon': location.get('current').get('condition').get('icon'),
+                    'localtime' : location.get('location', {}).get('localtime')
                 })
         return Response(weather_data, status=status.HTTP_200_OK)
 
